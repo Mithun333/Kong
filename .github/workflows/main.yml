@@ -15,16 +15,16 @@ jobs:
       uses: ikeike443/decK-action@master
       with:
         command: "ping"
-        options: "--kong-addr ${{ secrets.KONG_ADDR }}"
+        options: "--kong-addr http://172.28.12.124:8001"
     # Check the structure of your files 
     - name: decK validate
       id: decK_validate
       uses: ikeike443/decK-action@master
       with:
         command: "validate"
-        options: "--kong-addr ${{ secrets.KONG_ADDR }}" 
+        options: "--kong-addr http://172.28.12.124:8001" 
         kong_workspaces: "KongDemo"
-        github_token: ${{ secrets.TOKEN }}
+        github_token: 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
     # Sync the state of the files to the Kong instance and update the deployment status in your repo by GitHub Deployment API
     - name: decK sync
       id: decK_sync
@@ -33,6 +33,6 @@ jobs:
         ENV_URL: "http://172.28.12.124:8002" # Option: being used in the deployment status
       with:
         command: "sync"
-        options: "--kong-addr ${{ secrets.KONG_ADDR }}" 
+        options: "--kong-addr  http://172.28.12.124:8001" 
         kong_workspaces: "KongDemo"
-        github_token: ${{ secrets.TOKEN }}
+        github_token: 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
