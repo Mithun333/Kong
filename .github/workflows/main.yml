@@ -24,7 +24,7 @@ jobs:
         command: "validate"
         options: "--kong-addr ${{ secrets.KONG_ADDR }}" 
         kong_workspaces: "KongDemo"
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.TOKEN }}
     # Sync the state of the files to the Kong instance and update the deployment status in your repo by GitHub Deployment API
     - name: decK sync
       id: decK_sync
@@ -35,4 +35,4 @@ jobs:
         command: "sync"
         options: "--kong-addr ${{ secrets.KONG_ADDR }}" 
         kong_workspaces: "KongDemo"
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.TOKEN }}
