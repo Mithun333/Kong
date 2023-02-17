@@ -1,0 +1,38 @@
+name: Sync
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    # Make sure checkout your git repository
+    - uses: actions/checkout@v2
+      name: "checkout"
+    # Ping to your Kong instance
+    - name: decK ping
+      id: decK_ping
+      uses: ikeike443/decK-action@master
+      with:
+        command: "ping"
+        options: "--kong-addr ${{ secrets.KONG_ADDR }}"
+    # Check the structure of your files 
+    - name: decK validate
+      id: decK_validate
+      uses: ikeike443/decK-action@master
+      with:
+        command: "validate"
+        options: "--kong-addr ${{ secrets.KONG_ADDR }}" 
+        kong_workspaces: "KongDemo"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+    # Sync the state of the files to the Kong instance and update the deployment status in your repo by GitHub Deployment API
+    - name: decK sync
+      id: decK_sync
+      uses: ikeike443/decK-action@master
+      env:
+        ENV_URL: "http://172.28.12.124:8002" # Option: being used in the deployment status
+      with:
+        command: "sync"
+        options: "--kong-addr ${{ secrets.KONG_ADDR }}" 
+        kong_workspaces: "KongDemo"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
