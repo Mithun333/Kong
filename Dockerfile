@@ -1,10 +1,6 @@
 FROM kong/deck
 
-USER root
- 
-COPY entrypoint.sh /entrypoint.sh
-
-USER 1001
+COPY --chown=root entrypoint.sh /entrypoint.sh
 
 RUN  chmod +x /entrypoint.sh
  
