@@ -4,7 +4,7 @@ USER root
 RUN mkdir -p /usr/config
 WORKDIR /usr/config
 
-COPY --chown=root entrypoint.sh /entrypoint.sh
+COPY --chown=root entrypoint.sh /usr/config/entrypoint.sh
 
 RUN chmod +x /usr/config/entrypoint.sh
  
