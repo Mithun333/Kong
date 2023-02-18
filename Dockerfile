@@ -1,5 +1,5 @@
 FROM kong/deck
-
+USER root
 # Create a config directory
 RUN mkdir -p /usr/config
 WORKDIR /usr/config
