@@ -8,4 +8,4 @@ COPY --chown=root entrypoint.sh /usr/config/entrypoint.sh
 
 RUN chmod +x /usr/config/entrypoint.sh
  
-ENTRYPOINT ["bash", "/usr/config/entrypoint.sh"]
+ENTRYPOINT ["/usr/config/entrypoint.sh"]
