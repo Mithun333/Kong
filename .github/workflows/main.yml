@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # Make sure checkout your git repository
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       name: "checkout"
     # Ping to your Kong instance
     - name: decK ping
@@ -33,6 +33,6 @@ jobs:
         ENV_URL: "http://172.28.12.124:8002" # Option: being used in the deployment status
       with:
         command: "sync"
-        options: "--kong-addr  http://172.28.12.124:8001" 
+        options: "--kong-addr http://172.28.12.124:8001" 
         kong_workspaces: "KongDemo"
         github_token: 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
