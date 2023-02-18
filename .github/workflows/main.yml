@@ -1,25 +1,33 @@
-name: Kong Deck on Code Push
-
+name: Sync
+ 
 on:
   push:
-    branches:
-      - main
-
+    branches: [ main ]
+ 
 jobs:
-  kong-deck:
+  build:
     runs-on: ubuntu-latest
-
+ 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Install Kong Deck CLI
-      uses: Kong/deck@v2.x
+    - uses: actions/checkout@v2
+      name: "checkout"
+    - name: decK ping
+      id: decK_ping
+      uses: ./
       with:
-        version: "2.5.0"
-        
-    - name: Authenticate with Kong
-      run: kong config init http://172.28.12.124:8001"
-
-    - name: Sync Kong configuration
-      run: kong deck sync
+        command: "ping"
+        options: "--kong-addr http://172.28.12.124:8001"
+    - name: decK validate
+      id: decK_validate
+      uses: ./
+      with:
+        command: "validate"
+        options: "--kong-addr http://172.28.12.124:8001" 
+        kong_workspaces: "kong"
+    - name: decK sync
+      id: decK_sync
+      uses: ./
+      with:
+        command: "sync"
+        options: "--kong-addr http://172.28.12.124:8001" 
+        kong_workspaces: "kong"
