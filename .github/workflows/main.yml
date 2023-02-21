@@ -2,7 +2,7 @@ name: GitHub Actions Demo
 on:
   push:
     branches:
-    - 'deploy'
+    - 'main'
 jobs:
   deploy_to_clouds:
     runs-on: self-hosted
