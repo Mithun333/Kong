@@ -4,8 +4,8 @@ on:
     branches:
     - 'main'
 jobs:
-  deploy_to_clouds:
-    runs-on: self-hosted
+ build:
+    runs-on: ubuntu-latest
     name: Apply the decK configuration
     steps:
       - uses: actions/checkout@v2
