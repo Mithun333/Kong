@@ -1,0 +1,391 @@
+_id: spc_f52e86d7c7e24b51b76c9a7e5bb6f9c7
+type: ApiSpec
+parentId: wrk_7d0a585b662d4ebabdb9d4819f06052e
+modified: 1676633899827
+created: 1675930211373
+fileName: Nyltech-OpenAPI.yaml
+contents: "openapi: 3.0.0
+
+  info:\ 
+
+  \  title: OpenAPI Spec
+
+  \  description: List of all the Employees
+
+  \  version: '1.1.0'
+
+  \  contact:\ 
+
+  \    name: admin
+
+  \    url: testtracker.xyz
+
+  \    email: admin@testtracker.xyz
+
+  tags:
+
+  \  - name: OpenAPI-Nyltech
+
+  servers:
+
+  \  - url: https://api.vts.testtracker.xyz
+
+  paths:
+
+  \  /vts/api/Role/GetRoles:
+
+  \    get:\ 
+
+  \      operationId: getRoles
+
+  \      description: Details of the user
+
+  \      parameters:\ 
+
+  \        - name: Param1
+
+  \          in: query
+
+  \          description: provide the details of the user
+
+  \          schema:
+
+  \            type: integer
+
+  \            minimum: 1
+
+  \            maximum: 10000
+
+  \            example: 24
+
+  \      tags:
+
+  \        - OpenAPI-Nyltech
+
+  \      x-kong-plugin-rate-limiting:
+
+  \        enabled: true
+
+  \        config:
+
+  \          minute: 5
+
+  \          limit_by: ip
+
+  \          policy: local
+
+  \      responses:
+
+  \        \"200\":
+
+  \            description: Successfull pull of employee info
+
+  \            content:
+
+  \              application/json:
+
+  \                schema:
+
+  \                  type: array
+
+  \                  items:\ 
+
+  \                    properties:
+
+  \                      status:
+
+  \                        type: boolean
+
+  \                        example: true
+
+  \                      message:
+
+  \                        type: string
+
+  \                        example: Data retrived successfully
+
+  \                      result:
+
+  \                        type: array
+
+  \                        items:
+
+  \                          properties:
+
+  \                            id:
+
+  \                              type: string
+
+  \                              example: 12saxa-sadawdw-12w21d
+
+  \                            tenantId:
+
+  \                              type: string
+
+  \                              example: asdjkg12-1212io-21w1
+
+  \                            name:\ 
+
+  \                              type: string
+
+  \                              example: ninad
+
+  \                            email:
+
+  \                              type: string
+
+  \                              example: rai.bhaskar@novigosolutions.com
+
+  \                            mobile no:
+
+  \                              type: integer
+
+  \                              example:
+  98765432                               \ 
+
+  \  /vts/api/Menu/GetSettingsMenu:
+
+  \    get:
+
+  \      operationId: getSettingsMenuNyltech
+
+  \      tags:
+
+  \        - OpenAPI-Nyltech
+
+  \      description: Details of the user
+
+  \      parameters:\ 
+
+  \        - name: get Roles
+
+  \          in: query
+
+  \          description: provide the details of the user
+
+  \          schema:
+
+  \            type: integer
+
+  \            minimum: 1
+
+  \            maximum: 10000
+
+  \            example: 24
+
+  \      responses:
+
+  \        \"200\":
+
+  \            description: Successfull pull of employee info
+
+  \            content:
+
+  \              application/json:
+
+  \                schema:
+
+  \                  type: array
+
+  \                  items:\ 
+
+  \                    properties:
+
+  \                      status:
+
+  \                        type: boolean
+
+  \                        example: true
+
+  \                      message:
+
+  \                        type: string
+
+  \                        example: Setting menu is retrived
+
+  \                      result:
+
+  \                        type: array
+
+  \                        items:
+
+  \                          properties:
+
+  \                            id:
+
+  \                              type: string
+
+  \                              example: 12saxa-sadawdw-12w21d
+
+  \                            menuName:
+
+  \                              type: string
+
+  \                              example: TenantSettings1
+
+  \                            url:\ 
+
+  \                              type: string
+
+  \                              example: tenantsettings
+
+  \                            parentId:
+
+  \                              type: integer
+
+  \                              example: 9875
+
+  \                            menuOrder:
+
+  \                              type: integer
+
+  \                              example: 982
+
+  \                            menuIcon:
+
+  \                              type: string
+
+  \                              example: nt-settings-2
+
+  \                            isVisible:
+
+  \                              type: boolean
+
+  \                            tenantId:
+
+  \                              type: string
+
+  \                              example: siuefg232-wkjeb-wedoui
+
+  \                            menuRefrence:
+
+  \                              type: integer
+
+  \                              example: 20
+
+  \  /vts/api/Menu/GetMenu:
+
+  \    get:
+
+  \      operationId: getMenuItemsNyltech
+
+  \      tags:
+
+  \        - OpenAPI-Nyltech
+
+  \      description: Details of the user
+
+  \      parameters:\ 
+
+  \        - name: get Roles
+
+  \          in: query
+
+  \          description: provide the details of the user
+
+  \          schema:
+
+  \            type: integer
+
+  \            minimum: 1
+
+  \            maximum: 10000
+
+  \            example: 24
+
+  \      responses:
+
+  \        \"200\":
+
+  \            description: Successfull pull of employee info
+
+  \            content:
+
+  \              application/json:
+
+  \                schema:
+
+  \                  type: array
+
+  \                  items:\ 
+
+  \                    properties:
+
+  \                      status:
+
+  \                        type: boolean
+
+  \                      message:
+
+  \                        type: string
+
+  \                        example: Setting menu is retrived
+
+  \                      result:
+
+  \                        type: array
+
+  \                        items:
+
+  \                          properties:
+
+  \                            id:
+
+  \                              type: string
+
+  \                              example: 12saxa-sadawdw-12w21d
+
+  \                            menuName:
+
+  \                              type: string
+
+  \                              example: TenantSettings1
+
+  \                            url:\ 
+
+  \                              type: string
+
+  \                              example: tenantsettings
+
+  \                            parentId:
+
+  \                              type: integer
+
+  \                              example: 9875
+
+  \                            menuOrder:
+
+  \                              type: integer
+
+  \                              example: 982
+
+  \                            menuIcon:
+
+  \                              type: string
+
+  \                              example: nt-settings-2
+
+  \                            isVisible:
+
+  \                              type: boolean
+
+  \                            tenantId:
+
+  \                              type: string
+
+  \                              example: siuefg232-wkjeb-wedoui
+
+  \                            menuRefrence:
+
+  \                              type: integer
+
+  \                              example: 20
+
+  \   \ 
+
+  \     \ 
+
+  \                 \ 
+
+  \      "
+contentType: yaml

@@ -1,0 +1,24 @@
+_id: req_wrk_7d0a585b662d4ebabdb9d4819f06052eaa43f223
+type: Request
+parentId: fld_wrk_7d0a585b662d4ebabdb9d4819f06052e5bfda294
+modified: 1675930491680
+created: 1675930491680
+url: "{{ base_url }}/vts/api/Role/GetRoles"
+name: /vts/api/Role/GetRoles
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: Param1
+    disabled: true
+    value: "24"
+headers: []
+authentication: {}
+metaSortKey: -1675930491680
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,24 @@
+_id: req_wrk_7d0a585b662d4ebabdb9d4819f06052e20c8b8dd
+type: Request
+parentId: fld_wrk_7d0a585b662d4ebabdb9d4819f06052e5bfda294
+modified: 1675930491668
+created: 1675930491668
+url: "{{ base_url }}/vts/api/Menu/GetMenu"
+name: /vts/api/Menu/GetMenu
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: get Roles
+    disabled: true
+    value: "24"
+headers: []
+authentication: {}
+metaSortKey: -1675930491668
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
