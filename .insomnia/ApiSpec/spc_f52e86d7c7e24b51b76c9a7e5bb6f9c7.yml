@@ -1,7 +1,7 @@
 _id: spc_f52e86d7c7e24b51b76c9a7e5bb6f9c7
 type: ApiSpec
 parentId: wrk_7d0a585b662d4ebabdb9d4819f06052e
-modified: 1676633899827
+modified: 1677040320867
 created: 1675930211373
 fileName: Nyltech-OpenAPI.yaml
 contents: "openapi: 3.0.0
@@ -68,7 +68,7 @@ contents: "openapi: 3.0.0
 
   \        config:
 
-  \          minute: 5
+  \          minute: 10
 
   \          limit_by: ip
 
