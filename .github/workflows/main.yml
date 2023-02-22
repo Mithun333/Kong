@@ -13,10 +13,10 @@ jobs:
     - name: Setup Deck
       uses: kong/setup-deck@v1.2.2
       with: 
-        deck-version: 1.7.0
+        deck-version: 1.8.0
         
     - name: checkout
       uses: actions/checkout@v2
 
     - name: Run Deck
-      run: deck ping --kong-addr http://172.28.12.124:8001 --timeout 100
+      run: deck ping --kong-addr http://172.28.12.124:8001 --timeout 20
