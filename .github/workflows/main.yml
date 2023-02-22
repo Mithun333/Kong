@@ -14,6 +14,9 @@ jobs:
       uses: kong/setup-deck@v1
       with: 
         deck-version: 1.8.0
+        
+    - name: checkout
+      uses: actions/checkout@v2
 
     - name: Run Deck
       run: deck ping --kong-addr http://172.28.12.124:8001
