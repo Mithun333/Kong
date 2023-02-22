@@ -15,7 +15,7 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        npm install -g @kong/insomnia-inso@latest
+        npm i insomnia-inso
         npm install -g @kong/deck@latest
 
     - name: Validate OpenAPI
