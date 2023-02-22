@@ -13,7 +13,7 @@ jobs:
     - name: Setup Deck
       uses: kong/setup-deck@v1
       with: 
-        deck-version: 1.8.0
+        deck-version: 1.7.0
         
     - name: checkout
       uses: actions/checkout@v2
