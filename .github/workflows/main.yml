@@ -1,16 +1,28 @@
-name: Sync
- 
+name: Validate and Import OpenAPI on Push
+
 on:
   push:
-    branches: [ main ]
- 
+    branches:
+      - main
+
 jobs:
-  run_tests:
-    runs-on: ubuntu-20.04
+  build:
+    runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v2
-    - name: Run script file
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Install Dependencies
       run: |
-         chmod +x ./openapi-declarative.sh
-         ./openapi-declarative.sh
-      shell: bash
+        npm install -g @kong/insomnia-inso@latest
+        npm install -g @kong/deck@latest
+
+    - name: Validate OpenAPI
+      run: |
+        inso lint spec "Nyltech-OpenAPI.yaml"
+      continue-on-error: true
+
+    - name: Import to Kong
+      run: |
+        deck ping ./openapi-spec.yaml --kong-addr http://172.28.12.124:8001
